@@ -128,6 +128,7 @@ export namespace ConnectionConfiguration {
     debugSepPort: string;
     debugUpdateProductionFiles: boolean;
     debugEnableDebugTracing: boolean;
+    batchDebugJOBQ: string;
     readOnlyMode: boolean;
     quickConnect: boolean;
     defaultDeploymentMethod: DeploymentMethod | '';
@@ -208,6 +209,7 @@ export namespace ConnectionConfiguration {
       debugSepPort: (parameters.debugSepPort || "8008"),
       debugUpdateProductionFiles: (parameters.debugUpdateProductionFiles === true),
       debugEnableDebugTracing: (parameters.debugEnableDebugTracing === true),
+      batchDebugJOBQ: parameters.batchDebugJOBQ || 'QSYSNOMAX',
       readOnlyMode: (parameters.readOnlyMode === true),
       quickConnect: (parameters.quickConnect === true || parameters.quickConnect === undefined),
       defaultDeploymentMethod: parameters.defaultDeploymentMethod || ``,
