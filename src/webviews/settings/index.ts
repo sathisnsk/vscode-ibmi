@@ -186,7 +186,8 @@ export class SettingsUI {
           debuggerTab.addParagraph(`<ul>${Array.from(debugServiceConfig.entries()).map(([label, value]) => `<li><code>${label}</code>: ${value}</li>`).join("")}</ul>`);
 
           debuggerTab.addCheckbox(`debugUpdateProductionFiles`, `Update production files`, `Determines whether the job being debugged can update objects in production (<code>*PROD</code>) libraries.`, config.debugUpdateProductionFiles)
-            .addCheckbox(`debugEnableDebugTracing`, `Debug trace`, `Tells the debug service to send more data to the client. Only useful for debugging issues in the service. Not recommended for general debugging.`, config.debugEnableDebugTracing);
+            .addCheckbox(`debugEnableDebugTracing`, `Debug trace`, `Tells the debug service to send more data to the client. Only useful for debugging issues in the service. Not recommended for general debugging.`, config.debugEnableDebugTracing)
+            .addInput(`batchDebugJOBQ`, `Batch Debug JOBQ`, `JOBQ that will be used to submit the batch debugging job.`, { default: config.batchDebugJOBQ, minlength: 1, maxlength: 10 });
 
           if (!isManaged()) {
             debuggerTab.addHorizontalRule();
